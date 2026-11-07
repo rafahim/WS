@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { categories, products } from "@/data/products";
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://store.wishly.bd";
   const staticRoutes = ["", "/shop/", "/about/", "/faq/", "/privacy/", "/terms/"];

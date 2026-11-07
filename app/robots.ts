@@ -6,6 +6,8 @@ const aiAndSearchBots = [
   "ClaudeBot", "Claude-SearchBot", "Claude-User", "Google-Extended", "Applebot", "Applebot-Extended", "CCBot", "Bytespider", "DuckAssistBot"
 ];
 
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
