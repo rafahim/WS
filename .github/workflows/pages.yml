@@ -37,7 +37,7 @@ jobs:
       - name: Build static site
         run: npm run build
       - name: Verify static export
-        run: test -f out/index.html && test -f out/404.html && test -f out/sitemap.xml && test -f out/robots.txt && test -f out/CNAME
+        run: test -f out/index.html && test -f out/404.html && test -f out/sitemap.xml && test -f out/robots.txt && test -f out/CNAME && test -f out/llms.txt
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact

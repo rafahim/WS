@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-export const metadata: Metadata = { title: "Wishly Store FAQs", description: "Answers about Wishly Store collections, product previews, availability, pricing and saved gifts.", alternates: { canonical: "/faq/" } };
+export const metadata: Metadata = { title: "Wishly Store FAQs", description: "Answers about Wishly Store collections, product previews, availability, pricing and saved gifts.", alternates: { canonical: "/faq/" }, openGraph: { type: "website", title: "Wishly Store FAQs | Wishly Store", description: "Answers about Wishly Store collections, product previews, availability, pricing and saved gifts.", url: "/faq/", images: [{ url: "/images/og-wishly-store.png", width: 1200, height: 630, alt: "Wishly Store gift collections" }] } };
 const faqs = [
+  ["What is Wishly Store?", "Wishly Store is the preview gift catalogue of Wishly. It showcases digital greeting-card concepts called Wishly Cards, mystery gifts, birthday gifts, anniversary gifts and friendship gifts. It is currently a preview and orders are not open yet."],
+  ["What is Wishly?", "Wishly (wishly.bd) helps people create and share personal interactive websites for birthdays, anniversaries, proposals and other meaningful moments. Wishly Store is its gift catalogue."],
   ["Can I order a product right now?", "Not yet. Wishly Store is currently a preview catalogue. Ordering will open after product formats, prices, availability and fulfilment details are confirmed."],
   ["What happens when I select Buy?", "You will see a product-specific payment status page explaining that the item is not available to purchase yet. The page does not collect payment details, create an order or charge you."],
   ["What is a Wishly Card?", "Wishly Cards are planned digital greeting-card concepts for birthdays, love notes, gratitude and other meaningful moments. The exact formats will be announced before launch."],

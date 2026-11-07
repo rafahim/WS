@@ -70,6 +70,13 @@ export default function HomePage() {
 
     <section className="store-feature-band"><div className="store-container feature-band-inner"><div><span className="store-kicker">A DIFFERENT KIND OF DIGITAL GIFT</span><h2>Some moments deserve more than <em>“just a message.”</em></h2><p>Wishly also helps you create and share personal interactive websites for birthdays, anniversaries, proposals and meaningful surprises.</p><a className="store-button store-button-primary" href="https://wishly.bd/" target="_blank" rel="noopener noreferrer">Explore the main Wishly <span>↗</span></a></div><div className="feature-band-art"><img src="/images/products/wishly-personal-wish-website-maker.webp" alt="A personal Wishly website gift preview" width="1200" height="740" loading="lazy"/><div className="feature-band-sticker">made to<br /><em>mean more</em> ✦</div></div></div></section>
 
+    <section className="store-section"><div className="store-container">
+      <span className="store-kicker">QUICK ANSWERS</span>
+      <h2>What is <em>Wishly Store?</em></h2>
+      <p>Wishly Store is the preview gift catalogue of Wishly, the service for creating personal interactive websites for birthdays, anniversaries, proposals and other meaningful moments. It features five collections: Wishly Cards, Mystery Gifts, Birthday Gifts, Anniversary Gifts and Friendship Gifts.</p>
+      <p>The Store is currently a preview catalogue. Products cannot be ordered yet, no prices are published and no payment details are collected. Formats, prices and availability will be announced before orders open.</p>
+    </div></section>
+
     <section className="store-section store-faq-preview"><div className="store-container faq-preview-inner"><div><span className="store-kicker">GOOD TO KNOW</span><h2>Before you <em>pick a gift.</em></h2><p>Wishly Store is currently a preview catalogue. We are preparing product formats, pricing and fulfilment details before opening orders.</p><Link className="store-text-link" href="/faq/">Read store FAQs <span>→</span></Link></div><div className="store-mini-faq"><details><summary>Can I order something today?</summary><p>Not yet. The current Store is a collection preview. Product availability and ordering will be announced after launch details are confirmed.</p></details><details><summary>Are these physical or digital gifts?</summary><p>The collection includes digital card concepts and gift concepts. Each product page explains what is currently known; Mystery Gift formats are still being planned.</p></details><details><summary>Do products have prices?</summary><p>Prices are not published yet. We will show confirmed prices and any delivery details before taking orders.</p></details></div></div></section>
   </>;
 }

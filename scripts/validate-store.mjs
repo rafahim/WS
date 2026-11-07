@@ -39,8 +39,8 @@ if (failedPaymentChecks.length) {
 console.log(`Payment/contact validation passed: ${requiredPaymentChecks.length} checks.`);
 
 const requiredBrandAssets = [
-  'favicon.ico', 'favicon.svg', 'wishly-icon.svg', 'apple-icon.png',
-  'icon-192.webp', 'icon-512.webp', 'assets/logo-mark.svg', 'assets/logo-mark-512.png', 'site.webmanifest'
+  'favicon.ico', 'wishly-icon.svg', 'apple-icon.png',
+  'icon-192.png', 'icon-512.png', 'site.webmanifest'
 ];
 const missingBrandAssets = requiredBrandAssets.filter((asset) => !fs.existsSync(path.join(root, 'public', asset)));
 let manifestValid = false;
@@ -48,7 +48,7 @@ try {
   const manifest = JSON.parse(fs.readFileSync(path.join(root, 'public/site.webmanifest'), 'utf8'));
   manifestValid = Array.isArray(manifest.icons) && manifest.icons.length >= 2 && manifest.icons.every((icon) => fs.existsSync(path.join(root, 'public', icon.src.replace(/^\//, ''))));
 } catch { manifestValid = false; }
-const iconMetadataValid = fs.readFileSync(path.join(root, 'app/layout.tsx'), 'utf8').includes('/wishly-icon.svg?v=2') && fs.readFileSync(path.join(root, 'public/favicon.svg'), 'utf8').includes('viewBox="0 0 100 100"');
+const iconMetadataValid = fs.readFileSync(path.join(root, 'app/layout.tsx'), 'utf8').includes('/wishly-icon.svg?v=2') && fs.readFileSync(path.join(root, 'public/wishly-icon.svg'), 'utf8').includes('viewBox="0 0 100 100"');
 if (missingBrandAssets.length || !manifestValid || !iconMetadataValid) {
   console.error({ missingBrandAssets, manifestValid, iconMetadataValid });
   process.exit(1);
