@@ -19,7 +19,6 @@ export default function StoreNavbar() {
   const panelRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const savedY = useRef(0);
-  const previousBody = useRef("");
   const restoreScrollAfterClose = useRef(true);
 
   useEffect(() => {
@@ -31,13 +30,9 @@ export default function StoreNavbar() {
 
   useEffect(() => {
     if (!open) return;
+    // Lock scrolling on <html> only. Making <body> position:fixed moved the sticky header (and the menu
+    // panel inside it) off-screen whenever the page was scrolled, so the hamburger looked dead.
     savedY.current = window.scrollY;
-    previousBody.current = document.body.style.cssText;
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${savedY.current}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
     document.documentElement.classList.add("store-menu-open");
     const first = panelRef.current?.querySelector<HTMLElement>("a[href]");
     requestAnimationFrame(() => first?.focus({ preventScroll: true }));
@@ -64,9 +59,8 @@ export default function StoreNavbar() {
     document.addEventListener("keydown", onKeyDown);
     return () => {
       document.removeEventListener("keydown", onKeyDown);
-      document.body.style.cssText = previousBody.current;
       document.documentElement.classList.remove("store-menu-open");
-      if (restoreScrollAfterClose.current) window.scrollTo(0, savedY.current);
+      if (restoreScrollAfterClose.current && Math.abs(window.scrollY - savedY.current) > 1) window.scrollTo(0, savedY.current);
       restoreScrollAfterClose.current = true;
     };
   }, [open]);
