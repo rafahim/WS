@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound() { return <section className="store-page-hero"><div className="store-container"><span className="store-kicker">THIS GIFT BOX IS EMPTY</span><h1>That page went <em>missing.</em></h1><p>The collection or gift you are looking for may have moved.</p><Link className="store-button store-button-primary" href="/shop/">Back to the Store <span>→</span></Link></div></section>; }

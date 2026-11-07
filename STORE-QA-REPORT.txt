@@ -1,0 +1,27 @@
+# Wishly Store — Image & Favicon Update QA Report
+
+## Changes
+
+- Replaced the previous generic/mismatched product artwork with purpose-matched images for all five collections and all nine product concepts.
+- Digital card products use matching previews from the main Wishly template/insight library. Mystery Gift and Unexpected Box use dedicated gift artwork.
+- Updated all 13 files in `public/images/products/` to optimized 1200×740 WebP assets.
+- Added a distinct Best Friend appreciation visual and a separate Unexpected Gift Box artwork.
+- Restored the official main Wishly favicon/icon set: ICO, SVG, Apple icon, 192px WebP and 512px WebP.
+- Updated the legacy logo mark files, metadata icon declarations and web manifest so all icon formats use the official Wishly mark.
+- Updated image intrinsic width/height attributes to match the normalized product image ratio.
+
+## Validation
+
+- Catalogue validation: passed.
+- Product/category slugs: 14 unique slugs, no duplicates.
+- Product/category image references: 14 references, 0 missing.
+- Product image assets: 13 WebP files, all present and non-empty.
+- Official favicon/icon files: 9 required assets, all present.
+- Web manifest JSON and icon file references: passed.
+- Layout metadata references the versioned official Wishly icon: passed.
+- Purchase flow: still reports unavailable; does not collect payment details.
+- Store contact: still points to `https://wishly.bd/contact`.
+
+## Build limitation
+
+This update changes assets, catalogue image mappings, metadata icon paths and validation scripts. A full dependency-backed `npm ci`, `npm run typecheck` and `npm run build` were not run in this environment. GitHub Actions remains configured to install from `package-lock.json`, validate the store, typecheck, build and deploy.
